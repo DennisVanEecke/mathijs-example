@@ -2,5 +2,8 @@
 
 Clone this in a folder.
 
-Run this by doing `source ./run` on your mac. Assuming you have a python interpreter installed.
+Perform the command `chmod +x ./run` to give the run command execute privileges.
+
+Run the server by doing `./run <port number>` on your mac. Assuming you have a python interpreter installed. Follow the instructions.
+
 

@@ -1,3 +1,21 @@
-#!/bin/bash
+#!/bin/zsh
 
-python3 main.py
+if [ -z "$1" ]; then
+  PORT=8000
+else
+  PORT=$1
+fi
+
+cleanup() {
+    echo "Stopping server..."
+    kill "$PYTHON_PID"
+    exit 0
+}
+trap cleanup SIGINT
+
+python3 -m main.py "$PORT" &
+PYTHON_PID=$!
+echo "Server started. Go to http://localhost:$PORT/"
+open "http://localhost:$PORT/"
+
+wait "$PYTHON_PID"

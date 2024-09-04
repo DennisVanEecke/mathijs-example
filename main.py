@@ -3,6 +3,13 @@ import socketserver
 from urllib.parse import parse_qs
 from datetime import datetime
 import json
+import sys  # Import sys to read command-line arguments
+
+# Check if a port number is provided as a command-line argument
+if len(sys.argv) > 1:
+    PORT = int(sys.argv[1])  # Convert the argument to an integer
+else:
+    PORT = 8000  # Default port if no argument is provided
 
 PORT = 8000
 
